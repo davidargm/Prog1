@@ -1,9 +1,9 @@
-package Clase7_7;
+package Clase7_8;
 /*Hacer un programa que dado un arreglo ordenado creciente de enteros
 de tamaño 10 que se encuentra precargado, solicite al usuario un numero
-entero y lo inserte en el arreglo manteniendo su orden. Para ello tendrá
-que realizar un corrimiento a derecha (se pierde el último valor del arreglo)
-y colocar el numero en el arreglo en la posición indicada.*/
+entero y elimine la primer ocurrencia de numero (un número igual) en el
+arreglo si existe.*/
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 public class Main {
@@ -15,10 +15,10 @@ public class Main {
 		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 		try{
 			imprimir_arreglo_int(arrenteros);
-			System.out.println("Ingrese el numero que desea agregar: ");
+			System.out.println("Ingrese el numero que desea eliminar: ");
 			numero = Integer.valueOf(entrada.readLine());
 			/*no se si esta bien pasar una funcion por parametro. de otra forma no se como traer posicion*/
-			corrimiento_der(arrenteros, buscarPosicion(arrenteros,numero));
+			borrar_numero(arrenteros, buscarPosicion(arrenteros,numero));
 			imprimir_arreglo_int(arrenteros);
 		}
 		catch (Exception exc){
@@ -40,11 +40,11 @@ public class Main {
 		return posicion;
 	}
 	
-	public static void corrimiento_der(int [] arrenteros, int pos){
-		int indice = MAX-1;
-		while (indice > pos){
-			arrenteros[indice] = arrenteros[indice-1];
-			indice--;
+	public static void borrar_numero(int [] arrenteros, int pos){
+		int indice = pos;
+		while (indice < MAX-1){
+			arrenteros[indice] = arrenteros[indice+1];
+			indice++;
 		}
 	}
 }
