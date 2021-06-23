@@ -14,6 +14,7 @@ catch (Exception exc){
 }
 
 //carga de arreglo de char con valores de 'a' a la 'z'
+public static int MAX = 10;
 public static void cargar_arreglo_aleatorio_char(char [] arr){
 	Random r = new Random();
 	for (int pos = 0; pos < MAX; pos++){
@@ -21,6 +22,9 @@ public static void cargar_arreglo_aleatorio_char(char [] arr){
 	}
 }
 //carga de arreglo de int con valores de MINVALOR a MAXVALOR
+public static int MAX = 10;
+public static int MAXVALOR = 10;
+public static int MINVALOR = 1;
 public static void cargar_arreglo_aleatorio_int(int [] arr){
 	Random r = new Random();
 	for (int pos = 0; pos < MAX; pos++){
@@ -47,10 +51,6 @@ public static void imprimir_arreglo_char(char [] arr){
 	}
 }
 //impresion de arreglo de int
-
-public static int MAX = 10;
-public static int MAXVALOR = 10;
-public static int MINVALOR = 1;
 
 public static void imprimir_arreglo_int(int [] arr){
 	for (int pos = 0; pos < MAX; pos++){
@@ -189,7 +189,7 @@ public static int promedio_fila (int[][] mat, int fila){
 	return promedio;
 }
 
-//BUSCAR NUMERO. SE COMBINA CON EL SIGUIENTE METODO "BUSCAR NUMERO INGRESADO POR EL USUARIO"
+//BUSCAR NUMERO POR FILA Y COLUMNA. SE COMBINA CON EL SIGUIENTE METODO "BUSCAR NUMERO INGRESADO POR EL USUARIO"
 public static void imprimir_fila_columna_matriz(int[][] mat, int numero){
 	int fila = 0;
 	int columna = MAXCOLUMNA;
@@ -454,3 +454,5 @@ public class Main {
 		System.out.print("\n");
 	}
 }
+
+
